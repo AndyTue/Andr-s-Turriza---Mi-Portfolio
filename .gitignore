@@ -10,3 +10,45 @@ test-results
 repos-snap
 .impeccable/live
 .next-dev
+
+# Dependencies / build output (extra)
+.next-dev
+.vercel
+.turbo
+coverage
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files (all, secrets never go to prod repo)
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea
+.vscode
+*.swp
+
+# Tests (not needed in production)
+tests
+playwright.config.ts
+playwright-report
+test-results
+blob-report
+
+# AI tooling / design notes
+.claude
+.impeccable
+PRODUCT.md
+
+# Source originals (only the optimized outputs in public/ are served)
+Hero.JPEG
+public/images/about me
