@@ -19,6 +19,28 @@ const CANVAS_MARGIN = 24;
 
 type P = { x: number; y: number; px: number; py: number };
 
+/**
+ * Phones: the badge starts where the 👋 starts (covering it, never the name) and
+ * shrinks to fit between there and the screen edge. Desktop keeps the CSS position.
+ */
+function placeOnPhone(slot: HTMLElement, wide: boolean) {
+  const s = slot.style;
+  if (wide) {
+    s.left = s.right = s.scale = s.transformOrigin = "";
+    return;
+  }
+  const wave = document.querySelector<HTMLElement>("#hero-title img");
+  const parent = slot.offsetParent as HTMLElement | null;
+  if (!wave || !parent) return;
+  const pr = parent.getBoundingClientRect();
+  const left = wave.getBoundingClientRect().left - pr.left - 2;
+  const room = window.innerWidth - 10 - pr.left - left;
+  s.left = `${left}px`;
+  s.right = "auto";
+  s.transformOrigin = "top left";
+  s.scale = String(Math.max(0.34, Math.min(0.5, room / CARD_W)));
+}
+
 export function Lanyard() {
   const t = useTranslations("hero.lanyard");
   const slotRef = useRef<HTMLDivElement>(null);
@@ -27,13 +49,30 @@ export function Lanyard() {
   const tiltRef = useRef<HTMLDivElement>(null);
   // Below 810px the badge hangs at half size; re-run the setup when the breakpoint flips.
   const [wide, setWide] = useState(false);
+  // Bumped when the phone layout can shift (resize, web fonts) so the badge is re-placed.
+  const [layout, setLayout] = useState(0);
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 810px)");
     const sync = () => setWide(mq.matches);
     sync();
     mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
+    let timer = 0;
+    let lastWidth = window.innerWidth;
+    // Phones fire resize when the URL bar shows/hides; only a width change moves the text.
+    const onResize = () => {
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => setLayout((n) => n + 1), 150);
+    };
+    window.addEventListener("resize", onResize);
+    document.fonts?.ready.then(() => setLayout((n) => n + 1));
+    return () => {
+      mq.removeEventListener("change", sync);
+      window.removeEventListener("resize", onResize);
+      window.clearTimeout(timer);
+    };
   }, []);
 
   useEffect(() => {
@@ -48,7 +87,8 @@ export function Lanyard() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     slot.dataset.live = "";
 
-    // The slot may be CSS-scaled (phones); physics runs in unscaled card coordinates.
+    placeOnPhone(slot, wide);
+    // The slot may be scaled (phones); physics runs in unscaled card coordinates.
     const scale = slot.getBoundingClientRect().width / CARD_W || 1;
 
     // Anchor directly above the card, ANCHOR_ABOVE px over the hero's top edge.
@@ -63,7 +103,8 @@ export function Lanyard() {
       return { x: anchor.x, y, px: anchor.x, py: y };
     });
     // A gentle swing on arrival.
-    if (!reduce) pts[SEGMENTS].px -= 7;
+    // Phones hang a longer (scaled) rope, so a smaller nudge keeps the swing off the name.
+    if (!reduce) pts[SEGMENTS].px -= wide ? 7 : 2.5;
 
     let strap = "#2c2c30";
     let strapHi = "rgba(255,255,255,0.10)";
@@ -269,12 +310,12 @@ export function Lanyard() {
       card.removeEventListener("pointercancel", onUp);
       delete slot.dataset.live;
     };
-  }, [wide]);
+  }, [wide, layout]);
 
   return (
     <div
       ref={slotRef}
-      className="group/lanyard absolute top-[26px] right-4 h-[290px] w-[220px] origin-top-right scale-50 md:top-[175px] md:right-[55px] md:scale-100 lg:top-[180px] lg:right-[100px]"
+      className="group/lanyard absolute top-[118px] right-4 z-10 h-[290px] w-[220px] origin-top-right scale-50 md:top-[175px] md:right-[55px] md:scale-100 lg:top-[180px] lg:right-[100px]"
     >
       {/* Static strap for the no-JS render; the canvas replaces it once live. */}
       <span
