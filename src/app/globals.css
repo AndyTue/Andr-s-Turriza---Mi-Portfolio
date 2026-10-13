@@ -37,11 +37,6 @@
   --badge-from: #ffffff;
   --badge-to: #f0ede8;
 
-  --contrib-0: #ebe7e1;
-  --contrib-1: #bbf7d0;
-  --contrib-2: #4ade80;
-  --contrib-3: #16a34a;
-  --contrib-4: #166534;
 
   --shadow-pill: 0 2px 3px rgb(0 0 0 / 0.15);
   --shadow-card: 0 2px 6px rgb(0 0 0 / 0.08);
@@ -83,11 +78,6 @@
   --badge-from: #1c1c1c;
   --badge-to: #141414;
 
-  --contrib-0: #1a1a1a;
-  --contrib-1: #14532d;
-  --contrib-2: #15803d;
-  --contrib-3: #22c55e;
-  --contrib-4: #4ade80;
 
   --shadow-card: 0 2px 6px rgb(0 0 0 / 0.15);
   --shadow-dock:
@@ -345,42 +335,6 @@ html[data-locale-switching] .cv-section {
   display: block;
   -webkit-mask: var(--logo) center / contain no-repeat;
   mask: var(--logo) center / contain no-repeat;
-}
-
-/* GitHub contribution cells: minimal markup, level comes from data-l. */
-.cg-cell {
-  display: block;
-  width: 11px;
-  height: 11px;
-  border-radius: 3px;
-  background: var(--contrib-0);
-  transition: filter 0.15s;
-}
-.cg-cell:hover {
-  filter: brightness(1.25);
-}
-.cg-cell[data-l="1"] {
-  background: var(--contrib-1);
-}
-.cg-cell[data-l="2"] {
-  background: var(--contrib-2);
-}
-.cg-cell[data-l="3"] {
-  background: var(--contrib-3);
-}
-.cg-cell[data-l="4"] {
-  background: var(--contrib-4);
-}
-.cg-cell[data-empty] {
-  background: transparent;
-  pointer-events: none;
-}
-@media (min-width: 810px) {
-  .cg-cell {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-  }
 }
 
 @utility no-scrollbar {

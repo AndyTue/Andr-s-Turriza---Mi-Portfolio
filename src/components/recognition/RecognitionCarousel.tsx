@@ -6,6 +6,10 @@ import { ArrowLeft, ArrowRight, Award, BadgeCheck, Flag, Plane, Quote, ShieldChe
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import clsx from "clsx";
+import { useAutoAdvance } from "@/lib/useAutoAdvance";
+
+/** Long enough to read the statement before it changes. */
+const AWARD_MS = 7000;
 
 export type AwardSlide = {
   id: string;
@@ -77,10 +81,13 @@ export function RecognitionCarousel({ slides, region }: { slides: AwardSlide[]; 
   const t = useTranslations("recognition");
   const [index, setIndex] = useState(0);
   const total = slides.length;
-  const go = (step: number) => setIndex((i) => Math.min(total - 1, Math.max(0, i + step)));
+  const go = (step: number) => setIndex((i) => (i + step + total) % total);
+  const { ref, pauseProps } = useAutoAdvance<HTMLDivElement>(AWARD_MS, () => go(1), index);
 
   return (
     <div
+      ref={ref}
+      {...pauseProps}
       role="region"
       aria-roledescription="carousel"
       aria-label={region}
@@ -115,16 +122,15 @@ export function RecognitionCarousel({ slides, region }: { slides: AwardSlide[]; 
 
         <div className="mt-8 flex items-center gap-2">
           {[
-            { step: -1, icon: ArrowLeft, label: t("prev"), disabled: index === 0 },
-            { step: 1, icon: ArrowRight, label: t("next"), disabled: index === total - 1 },
-          ].map(({ step, icon: Icon, label, disabled }) => (
+            { step: -1, icon: ArrowLeft, label: t("prev") },
+            { step: 1, icon: ArrowRight, label: t("next") },
+          ].map(({ step, icon: Icon, label }) => (
             <button
               key={step}
               type="button"
               aria-label={label}
-              disabled={disabled}
               onClick={() => go(step)}
-              className="grid size-8 place-items-center rounded-full bg-surface text-accent-ink shadow-[0_0_0_1px_var(--line)] transition-[opacity,transform,background-color] duration-200 hover:bg-widget active:scale-95 disabled:pointer-events-none disabled:opacity-40"
+              className="grid size-8 place-items-center rounded-full bg-surface text-accent-ink shadow-[0_0_0_1px_var(--line)] transition-[opacity,transform,background-color] duration-200 hover:bg-widget active:scale-95"
             >
               <Icon size={16} strokeWidth={2.2} aria-hidden />
             </button>

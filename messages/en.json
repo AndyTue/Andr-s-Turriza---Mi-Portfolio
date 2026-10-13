@@ -17,6 +17,7 @@
     "githubRepo": "View {title} on GitHub",
     "email": "Email",
     "linkedin": "LinkedIn",
+    "instagram": "Instagram",
     "phone": "Phone",
     "placeholder": "Placeholder image",
     "location": "Tizimín, Yucatán, México"
@@ -24,8 +25,10 @@
   "nav": {
     "label": "Sections",
     "about": "About",
+    "experience": "Experience",
     "work": "Work",
     "services": "Services",
+    "recognition": "Recognition",
     "contact": "Contact",
     "theme": "Theme",
     "toLight": "Switch to light theme",
@@ -36,8 +39,7 @@
   "pill": {
     "name": "Andrés Turriza",
     "role": "Software Engineer",
-    "status": "Available",
-    "localTime": "Local time in Tizimín"
+    "status": "Available"
   },
   "hero": {
     "greetingSr": "Hello,",
@@ -293,15 +295,6 @@
   "experience": {
     "eyebrow": "// Stack & Experience",
     "title": "Where I'm strong and where I learned it",
-    "contrib": {
-      "handle": "@AndyTue",
-      "summary": "{count, plural, one {# contribution} other {# contributions}} in the last year",
-      "mock": "Sample data. Live counts load at build time.",
-      "day": "{count, plural, =0 {No contributions} one {# contribution} other {# contributions}} on {date}",
-      "label": "GitHub contribution graph for the last year",
-      "less": "Less",
-      "more": "More"
-    },
     "marqueeLabel": "Technologies I work with",
     "stackTitle": "Toolbox",
     "groups": {
@@ -445,8 +438,8 @@
         "meta": "U.S. Embassy in Mexico · 2024"
       },
       "ctf": {
-        "statement": "3rd place in a live attack-defense competition: exploiting target systems while hardening our own infrastructure against active adversaries.",
-        "org": "Capture the Flag Yucatán i6",
+        "statement": "3rd place at Capture the Flag Yucatán i6, a live attack-defense competition: exploiting target systems while hardening our own infrastructure against active adversaries.",
+        "org": "Government of the State of Yucatán",
         "meta": "Competition · 2024"
       },
       "secihti": {
@@ -462,98 +455,38 @@
     }
   },
   "how": {
-    "eyebrow": "// How I work",
-    "title": "End to end, from the first question to the shipped product",
+    "eyebrow": "// Let's talk",
+    "title": "Tell me what you're building",
     "profile": {
       "name": "Andrés Turriza",
-      "location": "Tizimín, MX",
       "badge": "Verified profile",
       "stats": {
-        "gpa": "GPA",
-        "clients": "Clients",
-        "students": "Students represented"
-      }
-    },
-    "relocate": {
-      "badge": "Available",
-      "title": "Open to relocate",
-      "text": "Based in Tizimín, Yucatán. Happy to work remotely or move for the right role."
+        "languages": "Bilingual",
+        "location": "Location",
+        "awards": "Awards & certifications"
+      },
+      "languagesValue": "ES / EN",
+      "locationValue": "Tizimín, MX",
+      "focusLabel": "Focus",
+      "focus": ["Software Development", "AI", "Project Management", "Cybersecurity"],
+      "contactLabel": "Contact"
     },
     "card": {
-      "title": "Work with me",
-      "lead": "I take on freelance projects and I'm open to full-time opportunities.",
       "sub": "One engineer from requirements to production, with availability to relocate.",
-      "badge": "Freelance & full-time",
       "points": [
-        "End-to-end delivery: requirements, design, development, deployment",
-        "Content editable from a single data layer",
-        "Bilingual ES/EN, professional working English",
-        "Scoping, content collection, delivery and handoff",
-        "Available to relocate"
+        { "title": "End-to-end delivery", "text": "Requirements, design, development and deployment." },
+        { "title": "Editable content", "text": "All content comes from a single data layer." },
+        { "title": "Scoping and handoff", "text": "Content collection, delivery and handoff." },
+        { "title": "Bilingual ES/EN", "text": "Professional working English." },
+        { "title": "Available to relocate", "text": "Based in Tizimín, Yucatán. Happy to work remotely or move for the right role." }
       ],
       "headline": "From brief to production."
-    }
-  },
-  "contact": {
-    "eyebrow": "// Let's connect",
-    "title": "Tell me what you're building",
-    "photoAlt": "Andrés Turriza",
-    "tag": "Available",
-    "name": "Andrés Turriza",
-    "role": "Software Engineer",
-    "stepOf": "Step {current} of {total}",
-    "back": "Back",
-    "next": "Continue",
-    "steps": {
-      "need": "What do you need?",
-      "details": "Your details",
-      "review": "Ready to send"
-    },
-    "options": {
-      "website": {
-        "title": "Custom website or press kit",
-        "description": "A fast, editable single-page site designed and built end to end."
-      },
-      "project": {
-        "title": "Full-stack or AI project",
-        "description": "APIs, web apps, RAG systems or computer vision pipelines."
-      },
-      "fulltime": {
-        "title": "Full-time opportunity / relocation",
-        "description": "A role on your team, on-site or remote. I'm available to relocate."
-      }
-    },
-    "fields": {
-      "name": "Name",
-      "namePlaceholder": "Your name",
-      "email": "Email",
-      "emailPlaceholder": "you@company.com",
-      "message": "Message",
-      "messagePlaceholder": "A few lines about the project or the role"
-    },
-    "errors": {
-      "name": "Tell me your name so I know who's writing.",
-      "email": "That email doesn't look right. Check it and try again.",
-      "message": "Add a short message, at least 10 characters."
-    },
-    "review": {
-      "intro": "This opens your email app with everything filled in. You can edit it before sending.",
-      "need": "Need",
-      "from": "From",
-      "message": "Message"
-    },
-    "send": "Open email to send",
-    "sent": "Your email app should be open now. If it isn't, write to me at <link>{email}</link>.",
-    "restart": "Start over",
-    "mail": {
-      "subject": "Portfolio inquiry: {need}",
-      "body": "Hi Andrés,\n\n{message}\n\n{name}\n{email}"
     }
   },
   "footer": {
     "thanks": "Thanks for stopping by",
     "build": "Let's build something useful",
-    "signature": "Andrés",
+    "signatureAlt": "Andrés Turriza's signature",
     "fullName": "Andrés de Jesús Turriza Euan",
     "role": "Software Engineer",
     "time": "Local time",

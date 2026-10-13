@@ -1,4 +1,4 @@
-import { siGithub } from "simple-icons";
+import { siGithub, siInstagram } from "simple-icons";
 
 type Props = { size?: number; className?: string };
 
@@ -6,6 +6,14 @@ export function GithubIcon({ size = 16, className }: Props) {
   return (
     <svg viewBox="0 0 24 24" width={size} height={size} className={className} aria-hidden fill="currentColor">
       <path d={siGithub.path} />
+    </svg>
+  );
+}
+
+export function InstagramIcon({ size = 16, className }: Props) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} className={className} aria-hidden fill="currentColor">
+      <path d={siInstagram.path} />
     </svg>
   );
 }

@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { ArrowUp, Mail } from "lucide-react";
+import { ArrowUp, Mail, Phone } from "lucide-react";
 import { profile } from "@/content/content";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
+import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 import { StatusDot } from "@/components/ui/StatusDot";
 import { LocalConditions } from "./LocalConditions";
 
@@ -43,7 +44,9 @@ export async function Footer() {
   const socials = [
     { href: profile.github, label: tc("github"), icon: <GithubIcon size={16} />, color: "var(--fg)" },
     { href: profile.linkedin, label: tc("linkedin"), icon: <LinkedinIcon size={15} />, color: "#0a66c2" },
+    { href: profile.instagram, label: tc("instagram"), icon: <InstagramIcon size={16} />, color: "#e1306c" },
     { href: `mailto:${profile.email}`, label: tc("email"), icon: <Mail size={16} aria-hidden />, color: "var(--accent-ink)" },
+    { href: profile.phoneHref, label: tc("phone"), icon: <Phone size={15} aria-hidden />, color: "var(--fg)" },
   ];
 
   return (
@@ -79,10 +82,14 @@ export async function Footer() {
           <p className="text-body md:w-[240px] md:text-left">{t("build")}</p>
         </div>
 
-        <p aria-hidden className="font-hand mt-12 text-[76px] leading-none text-muted select-none dark:text-muted/70 md:mt-14 md:text-[104px]">
-          {t("signature")}
-        </p>
-        <p className="mt-4 font-medium text-fg">{t("fullName")}</p>
+        <Image
+          src="/images/signature.png"
+          alt={t("signatureAlt")}
+          width={1904}
+          height={1996}
+          className="mt-10 h-[104px] w-auto opacity-90 select-none md:mt-12 md:h-[132px]"
+        />
+        <p className="mt-3 font-medium text-fg">{t("fullName")}</p>
         <p className="text-muted">{t("role")}</p>
 
         <div className="mt-6 flex flex-col items-center gap-3 md:flex-row">

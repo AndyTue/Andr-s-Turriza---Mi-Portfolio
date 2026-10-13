@@ -8,7 +8,6 @@ const ESTIMATES: Record<string, [mobile: number, desktop: number]> = {
   services: [860, 728],
   recognition: [1100, 715],
   how: [1550, 1040],
-  contact: [1650, 1007],
 };
 
 export function Section({

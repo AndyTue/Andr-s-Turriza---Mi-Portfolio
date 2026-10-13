@@ -72,10 +72,8 @@ export default async function LocaleLayout({
     nav: all.nav,
     pill: all.pill,
     weather: all.weather,
-    contact: all.contact,
     hero: { lanyard: all.hero.lanyard },
     about: { intro: all.about.intro, note: all.about.note, noteHint: all.about.noteHint, carousel: all.about.carousel, playing: all.about.playing },
-    experience: { contrib: all.experience.contrib },
     recognition: { prev: all.recognition.prev, next: all.recognition.next, slide: all.recognition.slide },
     footer: { time: all.footer.time, weatherIn: all.footer.weatherIn, weatherUnavailable: all.footer.weatherUnavailable },
   };

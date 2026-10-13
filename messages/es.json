@@ -10,13 +10,14 @@
     "available": "Disponible para reubicarme",
     "availableShort": "Disponible",
     "downloadCv": "Descargar CV",
-    "letsConnect": "Hablemos",
+    "letsConnect": "Conectar",
     "present": "Actualidad",
     "viewProject": "Ver caso de estudio: {title}",
     "github": "GitHub",
     "githubRepo": "Ver {title} en GitHub",
     "email": "Correo",
     "linkedin": "LinkedIn",
+    "instagram": "Instagram",
     "phone": "Teléfono",
     "placeholder": "Imagen provisional",
     "location": "Tizimín, Yucatán, México"
@@ -24,8 +25,10 @@
   "nav": {
     "label": "Secciones",
     "about": "Sobre mí",
+    "experience": "Experiencia",
     "work": "Proyectos",
     "services": "Servicios",
+    "recognition": "Reconocimientos",
     "contact": "Contacto",
     "theme": "Tema",
     "toLight": "Cambiar a tema claro",
@@ -36,8 +39,7 @@
   "pill": {
     "name": "Andrés Turriza",
     "role": "Ingeniero de Software",
-    "status": "Disponible",
-    "localTime": "Hora local en Tizimín"
+    "status": "Disponible"
   },
   "hero": {
     "greetingSr": "Hola,",
@@ -293,15 +295,6 @@
   "experience": {
     "eyebrow": "// Stack y experiencia",
     "title": "En qué soy bueno y dónde lo aprendí",
-    "contrib": {
-      "handle": "@AndyTue",
-      "summary": "{count, plural, one {# contribución} other {# contribuciones}} en el último año",
-      "mock": "Datos de ejemplo. Los reales se cargan al compilar.",
-      "day": "{count, plural, =0 {Sin contribuciones} one {# contribución} other {# contribuciones}} el {date}",
-      "label": "Gráfica de contribuciones en GitHub del último año",
-      "less": "Menos",
-      "more": "Más"
-    },
     "marqueeLabel": "Tecnologías con las que trabajo",
     "stackTitle": "Herramientas",
     "groups": {
@@ -445,8 +438,8 @@
         "meta": "Embajada de EE. UU. en México · 2024"
       },
       "ctf": {
-        "statement": "Tercer lugar en una competencia de ataque y defensa en vivo: explotar sistemas objetivo mientras blindábamos nuestra propia infraestructura ante adversarios activos.",
-        "org": "Capture the Flag Yucatán i6",
+        "statement": "Tercer lugar en el Capture the Flag Yucatán i6: competencia de ataque y defensa en vivo: explotar sistemas objetivo mientras blindábamos nuestra propia infraestructura ante adversarios activos.",
+        "org": "Gobierno del Estado de Yuctán",
         "meta": "Competencia · 2024"
       },
       "secihti": {
@@ -462,98 +455,38 @@
     }
   },
   "how": {
-    "eyebrow": "// Cómo trabajo",
-    "title": "De punta a punta, de la primera pregunta al producto en producción",
+    "eyebrow": "// Contacto",
+    "title": "Cuéntame qué estás construyendo",
     "profile": {
       "name": "Andrés Turriza",
-      "location": "Tizimín, MX",
       "badge": "Perfil verificado",
       "stats": {
-        "gpa": "Promedio",
-        "clients": "Clientes",
-        "students": "Estudiantes representados"
-      }
-    },
-    "relocate": {
-      "badge": "Disponible",
-      "title": "Listo para reubicarme",
-      "text": "Vivo en Tizimín, Yucatán. Puedo trabajar en remoto o mudarme por el puesto indicado."
+        "languages": "Bilingüe",
+        "location": "Ubicación",
+        "awards": "Premios y certificaciones"
+      },
+      "languagesValue": "ES / EN",
+      "locationValue": "Tizimín, MX",
+      "focusLabel": "Enfoque",
+      "focus": ["Software Development", "AI", "Project Management", "Cybersecurity"],
+      "contactLabel": "Contacto"
     },
     "card": {
-      "title": "Trabaja conmigo",
-      "lead": "Acepto proyectos freelance y estoy abierto a oportunidades de tiempo completo.",
       "sub": "Un ingeniero de los requerimientos a producción, con disponibilidad para reubicarme.",
-      "badge": "Freelance y tiempo completo",
       "points": [
-        "Entrega de punta a punta: requerimientos, diseño, desarrollo y despliegue",
-        "Contenido editable desde una sola capa de datos",
-        "Bilingüe ES/EN, inglés profesional",
-        "Alcance, recopilación de contenido, entrega y traspaso",
-        "Disponible para reubicarme"
+        { "title": "Entrega de punta a punta", "text": "Requerimientos, diseño, desarrollo y despliegue." },
+        { "title": "Contenido editable", "text": "Todo el contenido sale de una sola capa de datos." },
+        { "title": "Alcance y traspaso", "text": "Recopilación de contenido, entrega y traspaso." },
+        { "title": "Bilingüe ES/EN", "text": "Inglés profesional." },
+        { "title": "Disponible para reubicarme", "text": "Vivo en Tizimín, Yucatán. Puedo trabajar en remoto o mudarme por el puesto indicado." }
       ],
       "headline": "Del brief a producción."
-    }
-  },
-  "contact": {
-    "eyebrow": "// Hablemos",
-    "title": "Cuéntame qué estás construyendo",
-    "photoAlt": "Andrés Turriza",
-    "tag": "Disponible",
-    "name": "Andrés Turriza",
-    "role": "Ingeniero de Software",
-    "stepOf": "Paso {current} de {total}",
-    "back": "Atrás",
-    "next": "Continuar",
-    "steps": {
-      "need": "¿Qué necesitas?",
-      "details": "Tus datos",
-      "review": "Listo para enviar"
-    },
-    "options": {
-      "website": {
-        "title": "Sitio web o press kit a la medida",
-        "description": "Un sitio de una sola página, rápido y editable, diseñado y construido de punta a punta."
-      },
-      "project": {
-        "title": "Proyecto full-stack o de IA",
-        "description": "APIs, aplicaciones web, sistemas RAG o pipelines de visión por computadora."
-      },
-      "fulltime": {
-        "title": "Oportunidad de tiempo completo / reubicación",
-        "description": "Un puesto en tu equipo, presencial o remoto. Estoy disponible para reubicarme."
-      }
-    },
-    "fields": {
-      "name": "Nombre",
-      "namePlaceholder": "Tu nombre",
-      "email": "Correo",
-      "emailPlaceholder": "tu@empresa.com",
-      "message": "Mensaje",
-      "messagePlaceholder": "Unas líneas sobre el proyecto o el puesto"
-    },
-    "errors": {
-      "name": "Escribe tu nombre para saber quién me contacta.",
-      "email": "Ese correo no parece válido. Revísalo e inténtalo de nuevo.",
-      "message": "Agrega un mensaje breve, de al menos 10 caracteres."
-    },
-    "review": {
-      "intro": "Esto abre tu app de correo con todo ya escrito. Puedes editarlo antes de enviar.",
-      "need": "Necesidad",
-      "from": "De",
-      "message": "Mensaje"
-    },
-    "send": "Abrir correo para enviar",
-    "sent": "Tu app de correo ya debería estar abierta. Si no, escríbeme a <link>{email}</link>.",
-    "restart": "Empezar de nuevo",
-    "mail": {
-      "subject": "Contacto desde el portafolio: {need}",
-      "body": "Hola, Andrés:\n\n{message}\n\n{name}\n{email}"
     }
   },
   "footer": {
     "thanks": "Gracias por la visita",
     "build": "Construyamos algo útil",
-    "signature": "Andrés",
+    "signatureAlt": "Firma de Andrés Turriza",
     "fullName": "Andrés de Jesús Turriza Euan",
     "role": "Ingeniero de Software",
     "time": "Hora local",

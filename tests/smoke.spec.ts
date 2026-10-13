@@ -8,7 +8,7 @@ test.describe("home", () => {
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
     await expect(page.locator("h1")).toContainText("I am Andrés");
     await expect(page.locator('link[rel="alternate"][hreflang="es"]')).toHaveCount(1);
-    for (const id of ["about", "work", "experience", "services", "recognition", "how", "contact"]) {
+    for (const id of ["about", "work", "experience", "services", "recognition", "how"]) {
       await expect(page.locator(`section#${id}`)).toHaveCount(1);
     }
   });
@@ -66,23 +66,6 @@ test("services accordion keeps one item open", async ({ page }) => {
   await second.click();
   await expect(second).toHaveAttribute("aria-expanded", "true");
   await expect(first).toHaveAttribute("aria-expanded", "false");
-});
-
-test("contact wizard validates and builds the mailto", async ({ page }) => {
-  await page.goto("/en#contact");
-  const next = page.getByRole("button", { name: "Continue" });
-  await expect(next).toBeDisabled();
-  await page.getByText("Full-stack or AI project").click();
-  await next.click();
-  await page.getByRole("textbox", { name: "Name" }).fill("Ana");
-  await page.getByRole("textbox", { name: "Email" }).fill("ana@");
-  await next.click();
-  await expect(page.getByText("That email doesn't look right")).toBeVisible();
-  await page.getByRole("textbox", { name: "Email" }).fill("ana@company.com");
-  await page.getByRole("textbox", { name: "Message" }).fill("We are hiring an applied AI engineer.");
-  await next.click();
-  const send = page.getByRole("link", { name: /Open email to send/ });
-  await expect(send).toHaveAttribute("href", /^mailto:andres\.turrizae@hotmail\.com\?subject=Portfolio%20inquiry/);
 });
 
 test("project pages render in both languages", async ({ page }) => {

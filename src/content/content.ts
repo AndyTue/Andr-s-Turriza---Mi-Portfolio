@@ -11,6 +11,7 @@ export const profile = {
   github: "https://github.com/AndyTue",
   githubUser: "AndyTue",
   linkedin: "https://www.linkedin.com/in/andresturriza",
+  instagram: "https://www.instagram.com/andy_tue/",
   // TODO(andres): drop the real PDFs into /public/cv with these names.
   cv: { en: "/cv/Andres-Turriza-CV-EN.pdf", es: "/cv/Andres-Turriza-CV-ES.pdf" },
   images: {
@@ -266,8 +267,3 @@ export const awards: { id: AwardId; icon: "trophy" | "flag" | "shield" | "plane"
   { id: "secihti", icon: "plane" },
   { id: "google", icon: "certificate" },
 ];
-
-export const stats = { gpa: "88/100", clients: "3", students: "1,400+" } as const;
-
-export const contactOptions = ["website", "project", "fulltime"] as const;
-export type ContactOption = (typeof contactOptions)[number];

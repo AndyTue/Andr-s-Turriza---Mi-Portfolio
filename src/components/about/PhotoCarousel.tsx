@@ -9,6 +9,10 @@ import { useRef, useState } from "react";
 import clsx from "clsx";
 import { aboutPhotos } from "@/content/content";
 import { Placeholder } from "@/components/ui/Placeholder";
+import { useAutoAdvance } from "@/lib/useAutoAdvance";
+
+/** Time each photo stays up before the gallery advances on its own. */
+const PHOTO_MS = 4500;
 
 /** Layered backdrop blur that intensifies toward one edge. */
 const SIZES = "(min-width: 1200px) 362px, (min-width: 810px) 40vw, 100vw";
@@ -55,11 +59,14 @@ export function PhotoCarousel({ className }: { className?: string }) {
   const total = aboutPhotos.length;
 
   const go = (step: 1 | -1) => setState(([i]) => [(i + step + total) % total, step]);
+  const { ref, pauseProps } = useAutoAdvance<HTMLDivElement>(PHOTO_MS, () => go(1), index);
 
   const photo = aboutPhotos[index];
 
   return (
     <div
+      ref={ref}
+      {...pauseProps}
       role="region"
       aria-roledescription="carousel"
       aria-label={t("label")}

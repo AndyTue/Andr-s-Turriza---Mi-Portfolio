@@ -42,8 +42,8 @@ export function LocaleSwitch({ orientation }: { orientation: "vertical" | "horiz
       role="group"
       aria-label={t("language")}
       className={clsx(
-        "flex rounded-lg bg-chip p-0.5 text-[11px] font-medium tracking-wide",
-        orientation === "vertical" ? "w-[34px] flex-col" : "h-10 items-center",
+        "flex shrink-0 rounded-lg bg-chip p-0.5 text-[11px] leading-none font-medium ring-1 ring-line",
+        orientation === "vertical" ? "w-[34px] flex-col gap-0.5" : "h-10 items-center gap-0.5",
       )}
     >
       {order
@@ -58,8 +58,8 @@ export function LocaleSwitch({ orientation }: { orientation: "vertical" | "horiz
             onClick={() => select(l)}
             className={clsx(
               "grid place-items-center rounded-md uppercase transition-colors duration-200",
-              orientation === "vertical" ? "h-7 w-full" : "h-9 w-9",
-              l === locale ? "bg-surface text-fg shadow-[0_1px_2px_rgb(0_0_0/0.18)]" : "text-muted hover:text-fg",
+              orientation === "vertical" ? "h-[26px] w-full" : "h-9 w-8 min-[460px]:w-9",
+              l === locale ? "bg-accent-soft font-semibold text-accent-ink" : "text-muted hover:text-fg",
             )}
           >
             {l}

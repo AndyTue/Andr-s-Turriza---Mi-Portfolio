@@ -1,7 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import { Download, MapPin } from "lucide-react";
+import { Download, Mail, MapPin, Phone } from "lucide-react";
 import { profile } from "@/content/content";
-import { ConnectButton } from "@/components/ui/ConnectButton";
+import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 import { StatusDot } from "@/components/ui/StatusDot";
 import { Greeting } from "./Greeting";
 import { Lanyard } from "./Lanyard";
@@ -9,9 +9,32 @@ import { Lanyard } from "./Lanyard";
 export async function Hero() {
   const t = await getTranslations("hero");
   const tc = await getTranslations("common");
+  const tf = await getTranslations("footer");
   const locale = (await getLocale()) as "en" | "es";
   // "Software Engineer · Applied AI & Full-Stack" wraps as two whole phrases.
   const [role, focus] = t("role").split(" · ");
+
+  const socials = [
+    { href: profile.github, label: tc("github"), icon: <GithubIcon size={18} />, color: "var(--fg)" },
+    { href: profile.linkedin, label: tc("linkedin"), icon: <LinkedinIcon size={17} />, color: "#0a66c2" },
+    { href: profile.instagram, label: tc("instagram"), icon: <InstagramIcon size={18} />, color: "#e1306c" },
+    { href: `mailto:${profile.email}`, label: tc("email"), icon: <Mail size={18} aria-hidden />, color: "var(--accent-ink)" },
+    { href: profile.phoneHref, label: tc("phone"), icon: <Phone size={17} aria-hidden />, color: "var(--fg)" },
+  ];
+  const socialLinks = socials.map((s) => (
+    <li key={s.label}>
+      <a
+        href={s.href}
+        target={s.href.startsWith("http") ? "_blank" : undefined}
+        rel={s.href.startsWith("http") ? "noreferrer noopener" : undefined}
+        aria-label={s.label}
+        className="grid size-11 place-items-center rounded-full bg-surface shadow-pill ring-1 ring-line transition-transform duration-200 hover:-translate-y-0.5"
+        style={{ color: s.color }}
+      >
+        {s.icon}
+      </a>
+    </li>
+  ));
 
   return (
     <section
@@ -73,7 +96,16 @@ export async function Hero() {
             <Download size={16} strokeWidth={2} aria-hidden className="text-muted" />
             {tc("downloadCv")}
           </a>
-          <ConnectButton href="#contact">{tc("letsConnect")}</ConnectButton>
+          {/* Below md (no badge) the icons wrap under the CV button. From md up they're pulled
+              under the badge with only `right` set: `top: auto` keeps them in this row, so they
+              stay level with the button however the copy wraps. Rendered before <Lanyard /> so a
+              dragged card passes over them. */}
+          <ul
+            aria-label={tf("social")}
+            className="flex gap-2.5 md:absolute md:right-[25px] md:w-[280px] md:justify-center lg:right-[70px]"
+          >
+            {socialLinks}
+          </ul>
         </div>
       </div>
 

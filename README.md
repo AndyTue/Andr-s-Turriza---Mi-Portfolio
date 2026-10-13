@@ -42,7 +42,7 @@ npm run test:e2e     # 18 pruebas Playwright (escritorio + móvil, incluye axe W
 - **Temas:** oscuro por defecto, claro opcional (guardado en `localStorage`), con revelado circular vía View Transitions API y fade como alternativa.
 - **Accesibilidad:** contraste AA en ambos temas. Sobre fondo oscuro, los acentos finos usan `#6b6bf5`, porque `#000080` queda en ~1.2:1. También hay foco visible, carrusel y acordeón con ARIA, y soporte de `prefers-reduced-motion`.
 - **Sin JavaScript:** el contenido se ve igual (el revelado on-scroll tiene un respaldo CSS) y el lanyard muestra una cinta estática.
-- **Rendimiento:** las secciones bajo el hero usan `content-visibility: auto`, con alturas estimadas en `src/components/layout/Section.tsx`; si cambias mucho el contenido, ajústalas. Los logos del marquee se pintan con `mask-image` desde archivos estáticos. `motion` se carga con `LazyMotion`. Las contribuciones de GitHub se obtienen en build (revalidación diaria) desde una API pública sin credenciales, con datos de ejemplo rotulados como respaldo. El clima viene de Open-Meteo (sin clave), con caché de 30 min.
+- **Rendimiento:** las secciones bajo el hero usan `content-visibility: auto`, con alturas estimadas en `src/components/layout/Section.tsx`; si cambias mucho el contenido, ajústalas. Los logos del marquee se pintan con `mask-image` desde archivos estáticos. `motion` se carga con `LazyMotion`. El clima viene de Open-Meteo (sin clave), con caché de 30 min.
 
 ## Créditos y licencias de assets
 

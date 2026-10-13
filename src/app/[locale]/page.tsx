@@ -8,7 +8,6 @@ import { Experience } from "@/components/experience/Experience";
 import { Services } from "@/components/services/Services";
 import { Recognition } from "@/components/recognition/Recognition";
 import { HowIWork } from "@/components/how/HowIWork";
-import { Contact } from "@/components/contact/Contact";
 import { Footer } from "@/components/footer/Footer";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -34,7 +33,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <Services />
         <Recognition />
         <HowIWork />
-        <Contact />
       </main>
       <Footer />
     </>

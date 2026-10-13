@@ -1,20 +1,30 @@
 "use client";
 
-import { PenTool, SquareTerminal, UserRound, MessageSquareText, type LucideIcon } from "lucide-react";
+import {
+  Award,
+  BriefcaseBusiness,
+  MessageSquareText,
+  PenTool,
+  SquareTerminal,
+  UserRound,
+  type LucideIcon,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { ThemeToggle } from "./ThemeToggle";
 import { LocaleSwitch } from "./LocaleSwitch";
 
-type NavId = "about" | "work" | "services" | "contact";
+type NavId = "about" | "experience" | "work" | "services" | "recognition" | "contact";
 
-/** Each dock item lights up for its own section and the ones that follow it. */
+/** One dock item per section, in page order. */
 const NAV: { id: NavId; icon: LucideIcon; covers: string[] }[] = [
-  { id: "about", icon: UserRound, covers: ["about", "experience"] },
+  { id: "about", icon: UserRound, covers: ["about"] },
+  { id: "experience", icon: BriefcaseBusiness, covers: ["experience"] },
   { id: "work", icon: PenTool, covers: ["work"] },
-  { id: "services", icon: SquareTerminal, covers: ["services", "recognition"] },
-  { id: "contact", icon: MessageSquareText, covers: ["how", "contact"] },
+  { id: "services", icon: SquareTerminal, covers: ["services"] },
+  { id: "recognition", icon: Award, covers: ["recognition"] },
+  { id: "contact", icon: MessageSquareText, covers: ["how"] },
 ];
 
 const SPY_ORDER = NAV.flatMap((n) => n.covers);
@@ -31,7 +41,6 @@ function useScrollSpy() {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= probe) current = id;
       }
-      // Past the footer's start, keep "contact" lit.
       const nav = current ? NAV.find((n) => n.covers.includes(current!)) : undefined;
       setActive(nav?.id ?? null);
     };
@@ -49,6 +58,9 @@ function useScrollSpy() {
   }, []);
   return active;
 }
+
+// Six sections plus theme and language must fit a 360px phone, so the pill steps up in size.
+const itemSize = "w-8 justify-center min-[460px]:w-10 sm:w-11";
 
 const itemBase =
   "flex h-10 items-center rounded-lg text-muted outline-offset-2 transition-[background-color,color,width] duration-200 hover:text-fg";
@@ -70,22 +82,23 @@ export function Dock() {
     >
       <div
         className={clsx(
-          "group/dock flex items-center gap-1.5 rounded-2xl bg-surface p-2 shadow-dock min-[400px]:gap-2",
+          "group/dock flex items-center gap-1 rounded-2xl bg-surface p-1.5 shadow-dock min-[460px]:gap-1.5 min-[460px]:p-2 sm:gap-2",
           "lg:w-12 lg:flex-col lg:items-stretch lg:gap-2 lg:overflow-hidden lg:p-[7px]",
-          "lg:transition-[width] lg:duration-300 lg:ease-out-expo lg:hover:w-[150px] lg:focus-within:w-[150px]",
+          "lg:transition-[width] lg:duration-300 lg:ease-out-expo lg:hover:w-[190px] lg:focus-within:w-[190px]",
         )}
       >
-        <ul className="flex items-center gap-1.5 min-[400px]:gap-2 lg:flex-col lg:items-stretch lg:gap-2">
+        <ul className="flex items-center gap-0.5 min-[460px]:gap-1.5 sm:gap-2 lg:flex-col lg:items-stretch lg:gap-2">
           {NAV.map(({ id, icon: Icon }) => {
             const isActive = active === id;
             return (
               <li key={id}>
                 <a
-                  href={`#${id}`}
+                  href={`#${id === "contact" ? "how" : id}`}
                   aria-current={isActive ? "location" : undefined}
                   className={clsx(
                     itemBase,
-                    "w-10 justify-center min-[400px]:w-11 lg:w-full lg:justify-start lg:gap-3 lg:px-[7px]",
+                    itemSize,
+                    "lg:w-full lg:justify-start lg:gap-3 lg:px-[7px]",
                     isActive && "bg-accent-soft !text-accent-ink",
                   )}
                 >
@@ -102,7 +115,7 @@ export function Dock() {
         <span aria-hidden className="h-7 w-px bg-line lg:h-px lg:w-auto" />
 
         <ThemeToggle
-          className={clsx(itemBase, "w-10 justify-center min-[400px]:w-11 lg:w-full lg:justify-start lg:gap-3 lg:px-[5px]")}
+          className={clsx(itemBase, itemSize, "lg:w-full lg:justify-start lg:gap-3 lg:px-[5px]")}
           labelClassName="text-[15px] font-medium whitespace-nowrap max-lg:sr-only lg:opacity-0 lg:transition-opacity lg:duration-200 lg:group-hover/dock:opacity-100 lg:group-focus-within/dock:opacity-100"
         />
 

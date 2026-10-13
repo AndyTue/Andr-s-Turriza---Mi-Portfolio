@@ -18,7 +18,7 @@ export type StackPage = {
 /**
  * iOS-style Smart Stack: one widget at a time, rotating on its own.
  * Rotation pauses on hover/focus and off-screen; picking a page from the
- * side indicator stops it for good (the reader took control).
+ * side indicator just restarts the countdown, so it keeps moving.
  */
 export function SmartStack({
   pages,
@@ -38,7 +38,6 @@ export function SmartStack({
   const [[index, dir], setState] = useState<[number, 1 | -1]>([0, 1]);
   const [hover, setHover] = useState(false);
   const [focus, setFocus] = useState(false);
-  const [manual, setManual] = useState(false);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
@@ -50,18 +49,17 @@ export function SmartStack({
   }, []);
 
   useEffect(() => {
-    if (reduce || hover || focus || manual || !inView) return;
+    if (reduce || hover || focus || !inView) return;
     const wait = pages[index].duration + (firstAdvance.current ? startDelay : 0);
     const id = window.setTimeout(() => {
       firstAdvance.current = false;
       setState(([i]) => [(i + 1) % pages.length, 1]);
     }, wait);
     return () => window.clearTimeout(id);
-  }, [index, hover, focus, manual, inView, reduce, pages, startDelay]);
+  }, [index, hover, focus, inView, reduce, pages, startDelay]);
 
   const select = (i: number) => {
     if (i === index) return;
-    setManual(true);
     setState([i, i > index ? 1 : -1]);
   };
 
@@ -126,7 +124,7 @@ export function SmartStack({
         ))}
       </div>
 
-      <p className="sr-only" aria-live={manual ? "polite" : "off"}>
+      <p className="sr-only" aria-live="off">
         {page.slideLabel}
       </p>
     </div>
