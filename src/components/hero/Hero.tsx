@@ -1,8 +1,9 @@
 import { getLocale, getTranslations } from "next-intl/server";
-import { Download, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { profile } from "@/content/content";
 import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 import { StatusDot } from "@/components/ui/StatusDot";
+import { CvButton } from "./CvButton";
 import { Greeting } from "./Greeting";
 import { Lanyard } from "./Lanyard";
 
@@ -87,15 +88,19 @@ export async function Hero() {
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-2.5 md:mt-9">
-          {/* TODO(andres): add the real CV PDFs to /public/cv. */}
-          <a
+          <CvButton
             href={profile.cv[locale]}
-            download
+            downloadName={`CV_AndresTurriza_${locale.toUpperCase()}.pdf`}
+            labels={{
+              button: tc("downloadCv"),
+              title: tc("cvTitle"),
+              download: tc("cvDownload"),
+              close: tc("close"),
+              loading: tc("cvLoading"),
+              error: tc("cvError"),
+            }}
             className="inline-flex h-11 items-center gap-2 rounded-full border border-line px-4 text-[14px] font-medium text-body transition-[transform,background-color,color] duration-200 hover:bg-surface hover:text-fg active:scale-[0.98] md:text-[16px]"
-          >
-            <Download size={16} strokeWidth={2} aria-hidden className="text-muted" />
-            {tc("downloadCv")}
-          </a>
+          />
           {/* Below md (no badge) the icons wrap under the CV button. From md up they're pulled
               under the badge with only `right` set: `top: auto` keeps them in this row, so they
               stay level with the button however the copy wraps. Rendered before <Lanyard /> so a

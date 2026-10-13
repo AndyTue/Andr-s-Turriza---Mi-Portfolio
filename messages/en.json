@@ -10,6 +10,11 @@
     "available": "Available to relocate",
     "availableShort": "Available",
     "downloadCv": "Download CV",
+    "cvTitle": "Résumé · Andrés Turriza",
+    "cvDownload": "Download PDF",
+    "cvLoading": "Loading résumé…",
+    "cvError": "The résumé couldn't be shown here. Open it directly:",
+    "close": "Close",
     "letsConnect": "Let's connect",
     "present": "Present",
     "viewProject": "Open case study: {title}",
@@ -136,7 +141,7 @@
       "team": {
         "label": "Favorite team",
         "name": "FC Barcelona",
-        "sub": "Blaugrana · Camp Nou",
+        "sub": "Culer",
         "crestAlt": "FC Barcelona crest"
       },
       "series": {

@@ -12,7 +12,6 @@ export const profile = {
   githubUser: "AndyTue",
   linkedin: "https://www.linkedin.com/in/andresturriza",
   instagram: "https://www.instagram.com/andy_tue/",
-  // TODO(andres): drop the real PDFs into /public/cv with these names.
   cv: { en: "/cv/Andres-Turriza-CV-EN.pdf", es: "/cv/Andres-Turriza-CV-ES.pdf" },
   images: {
     portrait: "/images/andres-portrait.jpg",

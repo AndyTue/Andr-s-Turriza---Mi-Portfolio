@@ -43,6 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     twitter: { card: "summary_large_image", title: t("title"), description: t("description") },
     icons: { icon: "/icon.svg" },
+    verification: { google: "4cdOc2PIx_ZDkHW-ktqlpsRJo_xnr-5dcqoX76S5aG4" },
   };
 }
 

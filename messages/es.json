@@ -10,6 +10,11 @@
     "available": "Disponible para reubicarme",
     "availableShort": "Disponible",
     "downloadCv": "Descargar CV",
+    "cvTitle": "Currículum · Andrés Turriza",
+    "cvDownload": "Descargar PDF",
+    "cvLoading": "Cargando CV…",
+    "cvError": "No se pudo mostrar el CV aquí. Ábrelo directamente:",
+    "close": "Cerrar",
     "letsConnect": "Conectar",
     "present": "Actualidad",
     "viewProject": "Ver caso de estudio: {title}",
@@ -136,7 +141,7 @@
       "team": {
         "label": "Equipo favorito",
         "name": "FC Barcelona",
-        "sub": "Blaugrana · Camp Nou",
+        "sub": "Culer",
         "crestAlt": "Escudo del FC Barcelona"
       },
       "series": {
@@ -363,7 +368,7 @@
         "roleNote": "",
         "dates": "feb 2023 – ene 2025",
         "highlight": "Elegido por mis compañeros para representar a más de 1,400 estudiantes.",
-        "description": "Formé parte de los consejos de gobierno académico de la facultad como enlace entre estudiantes y administración, y apoyé iniciativas de mejora institucional.",
+        "description": "Formé parte de los consejos de gobierno académico de la universidad como enlace entre estudiantes y institución, y apoyé iniciativas de mejora institucional.",
         "tags": [
           "Representación",
           "Gobierno académico",
