@@ -25,7 +25,7 @@ export function Lanyard() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const tiltRef = useRef<HTMLDivElement>(null);
-  // The badge is hidden below 810px; don't run physics for an invisible card.
+  // Below 810px the badge hangs at half size; re-run the setup when the breakpoint flips.
   const [wide, setWide] = useState(false);
 
   useEffect(() => {
@@ -41,15 +41,18 @@ export function Lanyard() {
     const canvas = canvasRef.current;
     const card = cardRef.current;
     const tilt = tiltRef.current;
-    if (!wide || !slot || !canvas || !card || !tilt) return;
+    if (!slot || !canvas || !card || !tilt) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     slot.dataset.live = "";
 
+    // The slot may be CSS-scaled (phones); physics runs in unscaled card coordinates.
+    const scale = slot.getBoundingClientRect().width / CARD_W || 1;
+
     // Anchor directly above the card, ANCHOR_ABOVE px over the hero's top edge.
-    const anchorY = -(slot.offsetTop + ANCHOR_ABOVE);
+    const anchorY = -(slot.offsetTop + ANCHOR_ABOVE) / scale;
     const anchor = { x: CARD_W / 2, y: anchorY };
     const restEnd = { x: CARD_W / 2, y: -CLIP };
     const length = restEnd.y - anchor.y;
@@ -73,7 +76,7 @@ export function Lanyard() {
 
     // The rope can only sweep a half-disc of radius `length` under the anchor,
     // so the canvas covers exactly that (plus the strap width). No pointer events.
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min((window.devicePixelRatio || 1) / scale, 3);
     const reach = Math.ceil(length) + CANVAS_MARGIN;
     const cw = reach * 2;
     const ch = reach + CANVAS_MARGIN;
@@ -200,7 +203,7 @@ export function Lanyard() {
 
     const local = (e: PointerEvent) => {
       const r = slot.getBoundingClientRect();
-      return { x: e.clientX - r.left, y: e.clientY - r.top };
+      return { x: (e.clientX - r.left) / scale, y: (e.clientY - r.top) / scale };
     };
 
     const clampToRope = (p: { x: number; y: number }) => {
@@ -271,7 +274,7 @@ export function Lanyard() {
   return (
     <div
       ref={slotRef}
-      className="group/lanyard absolute top-[175px] right-[55px] hidden h-[290px] w-[220px] md:block lg:top-[180px] lg:right-[100px]"
+      className="group/lanyard absolute top-[26px] right-4 h-[290px] w-[220px] origin-top-right scale-50 md:top-[175px] md:right-[55px] md:scale-100 lg:top-[180px] lg:right-[100px]"
     >
       {/* Static strap for the no-JS render; the canvas replaces it once live. */}
       <span

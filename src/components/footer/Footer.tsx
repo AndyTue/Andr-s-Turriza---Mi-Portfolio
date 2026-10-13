@@ -83,11 +83,11 @@ export async function Footer() {
         </div>
 
         <Image
-          src="/images/signature.png"
+          src="/images/signature-2.png"
           alt={t("signatureAlt")}
-          width={1904}
-          height={1996}
-          className="mt-10 h-[104px] w-auto opacity-90 select-none md:mt-12 md:h-[132px]"
+          width={1565}
+          height={1062}
+          className="mt-10 h-[84px] w-auto opacity-90 invert select-none md:mt-12 md:h-[108px] dark:invert-0"
         />
         <p className="mt-3 font-medium text-fg">{t("fullName")}</p>
         <p className="text-muted">{t("role")}</p>
