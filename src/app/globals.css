@@ -1,0 +1,557 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ───────────────────────── Tokens ─────────────────────────
+   Light is the base; `.dark` on <html> (default) overrides.
+   Accent #000080 is used as a fill with white ink. On dark
+   grounds navy reads ~1.2:1, so fine accents (text, icons,
+   focus rings) use a lifted ink that clears AA (4.7:1).      */
+:root {
+  --bg: #faf9f7;
+  --surface: #ffffff;
+  --widget: #f0ede8;
+  --chip: #f0ede8;
+  --chip-strong: #e8e4de;
+  --tile: #e8e4de;
+  --line: #d6d0c8;
+  --line-soft: #e8e4de;
+
+  --fg: #1a1a1a;
+  --body: #3d3d3d;
+  --muted: #7a7a7a;
+
+  --accent: #000080;
+  --accent-hover: #0000a0;
+  --accent-ink: #000080;
+  --accent-line: #000080;
+  --accent-soft: rgb(0 0 128 / 0.1);
+  --on-accent: #ffffff;
+
+  --green: #16a34a;
+  --green-glow: rgb(22 163 74 / 0.35);
+
+  --dot: #a3a3a3;
+  --strap: #2f2f34;
+  --strap-hi: rgb(255 255 255 / 0.12);
+  --badge-from: #ffffff;
+  --badge-to: #f0ede8;
+
+  --contrib-0: #ebe7e1;
+  --contrib-1: #bbf7d0;
+  --contrib-2: #4ade80;
+  --contrib-3: #16a34a;
+  --contrib-4: #166534;
+
+  --shadow-pill: 0 2px 3px rgb(0 0 0 / 0.15);
+  --shadow-card: 0 2px 6px rgb(0 0 0 / 0.08);
+  --shadow-stack:
+    0 0.6px 0.6px -0.94px rgb(0 0 0 / 0.18),
+    0 1.8px 1.8px -1.88px rgb(0 0 0 / 0.17),
+    0 4.8px 4.8px -2.81px rgb(0 0 0 / 0.15),
+    0 15px 15px -3.75px rgb(0 0 0 / 0.06);
+  --shadow-dock:
+    0 0.48px 2.03px -1.63px rgb(0 0 0 / 0.15),
+    0 4px 16.8px -3.25px rgb(0 0 0 / 0.09);
+
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --widget: #1e1e1e;
+  --chip: #1f1f1f;
+  --chip-strong: #262626;
+  --tile: #1a1a1a;
+  --line: #1f1f1f;
+  --line-soft: #1a1a1a;
+
+  --fg: #f0f0f0;
+  --body: #c2c2c2;
+  --muted: #a3a3a3;
+
+  --accent-ink: #6b6bf5;
+  --accent-line: #3b3bd1;
+  --accent-soft: rgb(107 107 245 / 0.14);
+
+  --green: #4ade80;
+  --green-glow: rgb(80 112 86 / 0.5);
+
+  --strap: #3a3a41;
+  --strap-hi: rgb(255 255 255 / 0.09);
+  --badge-from: #1c1c1c;
+  --badge-to: #141414;
+
+  --contrib-0: #1a1a1a;
+  --contrib-1: #14532d;
+  --contrib-2: #15803d;
+  --contrib-3: #22c55e;
+  --contrib-4: #4ade80;
+
+  --shadow-card: 0 2px 6px rgb(0 0 0 / 0.15);
+  --shadow-dock:
+    0 0.48px 2.03px -1.63px rgb(0 0 0 / 0.5),
+    0 4px 16.8px -3.25px rgb(0 0 0 / 0.4),
+    inset 0 0 0 1px rgb(255 255 255 / 0.04);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-widget: var(--widget);
+  --color-chip: var(--chip);
+  --color-chip-strong: var(--chip-strong);
+  --color-tile: var(--tile);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-fg: var(--fg);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-line: var(--accent-line);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-green: var(--green);
+
+  --font-sans: var(--font-satoshi), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-fragment), ui-monospace, monospace;
+  --font-hand: var(--font-handrawn), cursive;
+
+  --shadow-pill: var(--shadow-pill);
+  --shadow-card: var(--shadow-card);
+  --shadow-stack: var(--shadow-stack);
+  --shadow-dock: var(--shadow-dock);
+
+  --breakpoint-md: 810px;
+  --breakpoint-lg: 1200px;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ───────────────────────── Base ───────────────────────── */
+@layer base {
+  /* `clip` on both: html's value goes to the viewport, so body's clip stays on
+     body and the lanyard canvas can't create sideways scroll on touch. */
+  html {
+    overflow-x: clip;
+    background: var(--bg);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 72px;
+  }
+
+  /* The ground colour lives on <html> so the fixed dot field (z -1) can sit
+     between it and the page. */
+  body {
+    background: transparent;
+    color: var(--body);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  @media (min-width: 810px) {
+    body {
+      font-size: 16px;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-ink);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  input,
+  textarea {
+    caret-color: var(--accent-ink);
+  }
+
+  ::placeholder {
+    color: var(--muted);
+    opacity: 1;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--chip-strong) transparent;
+  }
+
+  img {
+    -webkit-user-drag: none;
+  }
+}
+
+/* On-scroll reveal. Hidden only when JS is present; if hydration never
+   happens the fallback animation shows everything after 3s. */
+[data-reveal] {
+  transition:
+    opacity 0.5s var(--ease-out-quart),
+    transform 0.5s var(--ease-out-quart);
+}
+.js-reveal [data-reveal]:not([data-revealed]) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.js-reveal:not([data-reveal-ready]) [data-reveal]:not([data-revealed]) {
+  animation: reveal-fallback 0s 3s forwards;
+}
+@keyframes reveal-fallback {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal [data-reveal]:not([data-revealed]) {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Below-the-fold sections skip layout/paint until they near the viewport.
+   Estimates come per section (--cis-m / --cis-d); `auto` then remembers the
+   real height. During a locale switch everything lays out for real so the
+   scroll position can be restored exactly. */
+.cv-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto var(--cis-m, 1200px);
+}
+@media (min-width: 810px) {
+  .cv-section {
+    contain-intrinsic-size: auto var(--cis-d, 900px);
+  }
+}
+html[data-locale-switching] .cv-section {
+  content-visibility: visible;
+}
+
+/* Locale switch cross-fade: content fades while the route swaps. */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-locale-switching] [data-i18n-fade] {
+    opacity: 0;
+  }
+}
+[data-i18n-fade] {
+  transition: opacity 0.25s ease;
+}
+
+/* Theme reveal (View Transitions API): the new snapshot grows as a
+   circle from the toggle; the old one stays put underneath.         */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+/* ───────────────────────── Utilities ───────────────────────── */
+@utility column {
+  margin-inline: 16px;
+  border-inline: 1px solid var(--line);
+  @media (min-width: 810px) {
+    margin-inline: 24px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 980px;
+    margin-inline: auto;
+  }
+}
+
+@utility gutter {
+  padding-inline: 16px;
+  @media (min-width: 810px) {
+    padding-inline: 24px;
+  }
+  @media (min-width: 1200px) {
+    padding-inline: 42px;
+  }
+}
+
+@utility text-eyebrow {
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--accent-ink);
+  @media (min-width: 810px) {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+}
+
+@utility text-section {
+  font-size: 24px;
+  line-height: 1.185;
+  font-weight: 700;
+  color: var(--body);
+  letter-spacing: -0.01em;
+  @media (min-width: 810px) {
+    font-size: clamp(30px, 3.2vw, 36px);
+    line-height: 1.2;
+  }
+}
+
+@utility text-card-title {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--fg);
+  @media (min-width: 810px) {
+    font-size: 26px;
+  }
+}
+
+@utility text-micro {
+  font-size: 10px;
+  line-height: 12px;
+  @media (min-width: 810px) {
+    font-size: 12px;
+    line-height: 14.4px;
+  }
+}
+
+/* Marquee logos: painted through the SVG as a mask, so colour comes from background-color. */
+.tech-logo {
+  display: block;
+  -webkit-mask: var(--logo) center / contain no-repeat;
+  mask: var(--logo) center / contain no-repeat;
+}
+
+/* GitHub contribution cells: minimal markup, level comes from data-l. */
+.cg-cell {
+  display: block;
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  background: var(--contrib-0);
+  transition: filter 0.15s;
+}
+.cg-cell:hover {
+  filter: brightness(1.25);
+}
+.cg-cell[data-l="1"] {
+  background: var(--contrib-1);
+}
+.cg-cell[data-l="2"] {
+  background: var(--contrib-2);
+}
+.cg-cell[data-l="3"] {
+  background: var(--contrib-3);
+}
+.cg-cell[data-l="4"] {
+  background: var(--contrib-4);
+}
+.cg-cell[data-empty] {
+  background: transparent;
+  pointer-events: none;
+}
+@media (min-width: 810px) {
+  .cg-cell {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ───────────────────────── Keyframes ───────────────────────── */
+@keyframes framerGitHubFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.55);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee-left {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Journey map widget: leg i draws during [i·T, (i+1)·T]; stop i lands at i·T. */
+.jm-leg,
+.jm-pin,
+.jm-stop {
+  --jm-t: 0.95s;
+}
+.jm-leg {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: jm-draw var(--jm-t) var(--ease-out-quart) calc(var(--i) * var(--jm-t)) forwards;
+}
+.jm-pin {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: jm-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--i) * var(--jm-t)) both;
+}
+.jm-home {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse-ring 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+.jm-stop {
+  position: absolute;
+  inset: 0;
+  animation:
+    jm-in 0.35s var(--ease-out-quart) calc(var(--i) * var(--jm-t)) both,
+    jm-out 0.25s ease-in calc((var(--i) + 1) * var(--jm-t)) forwards;
+}
+.jm-stop-last {
+  animation: jm-in 0.35s var(--ease-out-quart) calc(var(--i) * var(--jm-t)) both;
+}
+@keyframes jm-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes jm-pop {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes jm-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes jm-out {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes tiles-up {
+  to {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes tiles-down {
+  from {
+    transform: translate3d(0, -50%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes wave {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0);
+  }
+  10%,
+  30% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+.wave {
+  animation: wave 2.2s ease-in-out 0.8s 2;
+}
+.wave:hover {
+  animation: wave 1.6s ease-in-out infinite;
+}
+
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

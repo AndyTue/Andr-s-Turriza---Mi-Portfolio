@@ -1,0 +1,582 @@
+{
+  "meta": {
+    "title": "Andrés Turriza · Ingeniero de Software, IA aplicada y Full-Stack",
+    "description": "Ingeniero de software que crea soluciones tecnológicas a la medida de punta a punta, en IA aplicada, desarrollo full-stack y web. Desde Tizimín, Yucatán, México. Disponible para reubicarme.",
+    "ogAlt": "Andrés Turriza, Ingeniero de Software",
+    "projectTitle": "{title} · Andrés Turriza"
+  },
+  "common": {
+    "skip": "Saltar al contenido",
+    "available": "Disponible para reubicarme",
+    "availableShort": "Disponible",
+    "downloadCv": "Descargar CV",
+    "letsConnect": "Hablemos",
+    "present": "Actualidad",
+    "viewProject": "Ver caso de estudio: {title}",
+    "github": "GitHub",
+    "githubRepo": "Ver {title} en GitHub",
+    "email": "Correo",
+    "linkedin": "LinkedIn",
+    "phone": "Teléfono",
+    "placeholder": "Imagen provisional",
+    "location": "Tizimín, Yucatán, México"
+  },
+  "nav": {
+    "label": "Secciones",
+    "about": "Sobre mí",
+    "work": "Proyectos",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "theme": "Tema",
+    "toLight": "Cambiar a tema claro",
+    "toDark": "Cambiar a tema oscuro",
+    "language": "Idioma",
+    "switchTo": "View in English"
+  },
+  "pill": {
+    "name": "Andrés Turriza",
+    "role": "Ingeniero de Software",
+    "status": "Disponible",
+    "localTime": "Hora local en Tizimín"
+  },
+  "hero": {
+    "greetingSr": "Hola,",
+    "intro": "Soy Andrés",
+    "greetingLabel": "Hola en hindi, español, inglés y francés",
+    "role": "Ingeniero de Software · IA aplicada y Full-Stack",
+    "summary": "Creo soluciones tecnológicas a la medida de punta a punta, desde entender el problema hasta poner la implementación en producción, en IA aplicada, desarrollo full-stack y web.",
+    "lanyard": {
+      "label": "Gafete. Arrástralo para que se balancee.",
+      "alt": "Retrato de Andrés Turriza con traje azul marino",
+      "name": "Andrés Turriza",
+      "caption": "Ingeniero de Software · Tizimín, MX",
+      "id": "ID · AT-2026"
+    }
+  },
+  "about": {
+    "eyebrow": "// Sobre mí",
+    "title": "La persona detrás del código",
+    "intro": "Combino criterio técnico con visión de producto para entregar soluciones prácticas, claras y fáciles de documentar y mantener para cualquier equipo. Estudiar y trabajar en India, Colombia, Canadá y Estados Unidos me enseñó a colaborar en inglés profesional y en español nativo.",
+    "note": "Y si no lo sé, lo aprendo.",
+    "noteHint": "Arrastra la nota",
+    "carousel": {
+      "label": "Fotos de Andrés",
+      "prev": "Foto anterior",
+      "next": "Foto siguiente",
+      "slide": "Foto {current} de {total}",
+      "alts": [
+        "Andrés Turriza sonriendo con traje azul marino",
+        "Andrés con un profesor en el cierre del Vigésimo Consejo Universitario de la UADY",
+        "Andrés frente a un edificio colonial amarillo",
+        "Andrés con su certificado en un podio de la University of New Mexico",
+        "Andrés en un parque junto a una bandera de Colombia",
+        "Andrés con un grupo de estudiantes frente a un edificio colonial con la bandera de Colombia",
+        "Andrés tomándose una selfie con una llama",
+        "Andrés y sus amigos sosteniendo una bandera de México",
+        "Andrés junto a un logo gigante de Google en sus oficinas",
+        "Andrés frente a un edificio neoclásico",
+        "Andrés recargado en el barandal de una terraza con edificios de la ciudad al fondo",
+        "Andrés frente a un edificio legislativo de estilo románico con una gran bandera de Canadá",
+        "Andrés mirando las Cataratas del Niágara a través de una ventana",
+        "Andrés en el barandal frente a las Cataratas del Niágara",
+        "Andrés con jersey de los Leones en un estadio de béisbol",
+        "Andrés en el campus de Infosys frente a una cúpula geodésica",
+        "Andrés mostrando su gafete en el campus de Infosys",
+        "Andrés y compañeros con el estandarte de la UADY frente a una pirámide de cristal",
+        "Andrés sentado en una banca frente a un edificio con cúpula",
+        "Andrés con un grupo de amigos frente a un palacio en Bengaluru",
+        "Andrés posando divertido frente a un palacio",
+        "Andrés frente a un templo hindú con una torre dorada",
+        "Andrés con kurta blanca frente a un templo tallado",
+        "Andrés frente al Taj Mahal",
+        "Andrés sentado en una banca con el Taj Mahal al fondo",
+        "Andrés mirando hacia el Taj Mahal a lo lejos"
+      ]
+    },
+    "playing": {
+      "label": "Canción favorita",
+      "progress": "{elapsed} de {total}"
+    },
+    "stack": {
+      "personal": "Algunas cosas personales",
+      "journey": "Mi recorrido y recuerdos",
+      "show": "Mostrar {name}",
+      "slide": "{current} de {total}: {name}"
+    },
+    "widgets": {
+      "hometown": {
+        "label": "Mi tierra",
+        "pre": "Orgullosamente de",
+        "place": "Tizimín, Yucatán",
+        "chip": "Ciudad de Reyes"
+      },
+      "hobbies": {
+        "label": "Hobbies",
+        "items": {
+          "basketball": {
+            "name": "Básquetbol",
+            "verb": "Lo juego"
+          },
+          "gym": {
+            "name": "Gimnasio",
+            "verb": "Entreno"
+          },
+          "soccer": {
+            "name": "Fútbol",
+            "verb": "Lo veo"
+          },
+          "baseball": {
+            "name": "Béisbol",
+            "verb": "Lo veo"
+          }
+        }
+      },
+      "team": {
+        "label": "Equipo favorito",
+        "name": "FC Barcelona",
+        "sub": "Blaugrana · Camp Nou",
+        "crestAlt": "Escudo del FC Barcelona"
+      },
+      "series": {
+        "label": "Serie favorita",
+        "name": "Breaking Bad",
+        "sub": "5 temporadas · 2008–2013"
+      },
+      "journey": {
+        "label": "Mi recorrido",
+        "count": "5 ciudades · 5 países",
+        "stops": {
+          "tizimin": {
+            "city": "Tizimín, Yucatán",
+            "note": "Mi casa"
+          },
+          "albuquerque": {
+            "city": "Albuquerque, EE. UU.",
+            "note": "UNM · Programa de liderazgo · 2024"
+          },
+          "bucaramanga": {
+            "city": "Bucaramanga, Colombia",
+            "note": "UPB · Semestre de intercambio · 2024"
+          },
+          "montreal": {
+            "city": "Montréal, Canadá",
+            "note": "McGill · Immersive English for STEM · 2025"
+          },
+          "bengaluru": {
+            "city": "Bengaluru, India",
+            "note": "Infosys · Software & AI Intern · 2026"
+          }
+        }
+      },
+      "showcase": {
+        "label": "Vitrina",
+        "count": "4 recuerdos",
+        "hint": "Pasa el cursor o toca un objeto",
+        "items": {
+          "ctf": {
+            "title": "3er lugar · Capture the Flag",
+            "detail": "CTF Yucatán i6 · ataque y defensa en vivo · 2024"
+          },
+          "secihti": {
+            "title": "Beca Internacional SECIHTI Yucatán",
+            "detail": "Immersive English for STEM · McGill University · 2025"
+          },
+          "unm": {
+            "title": "Beca de Liderazgo Comunitario · Embajada de EE. UU.",
+            "detail": "Instituto sobre Identidad y Liderazgo Comunitario · The University of New Mexico · 2024"
+          },
+          "google": {
+            "title": "Certificado de Google en Gestión de Proyectos",
+            "detail": "Certificado profesional · Coursera · 2025"
+          }
+        }
+      }
+    }
+  },
+  "work": {
+    "eyebrow": "// Proyectos destacados",
+    "title": "Los que más me han enseñado",
+    "mockupAlt": "Captura de {title}",
+    "projects": {
+      "ekyc": {
+        "title": "AI-Powered eKYC & Risk Intelligence on MOSIP",
+        "period": "feb – ago 2026",
+        "org": "Infosys InStep",
+        "role": "Software & AI Intern",
+        "description": "Sistema de verificación de documentos de identidad integrado a la infraestructura de identidad de nivel gubernamental de MOSIP, con un pipeline de detección de fraude en varias etapas. Mención honorífica a Best Real-World Application en ProjectFest 2026.",
+        "details": [
+          "Pipeline de detección de fraude en varias etapas que combina análisis forense de metadatos y detección de alteraciones a nivel de píxel.",
+          "Extracción con OCR y validación de la zona MRZ en documentos de viaje.",
+          "Sistema de plantillas de documentos para extraer campos estructurados mediante alineación por homografía.",
+          "Mención honorífica, Best Real-World Application, Infosys InStep Annual ProjectFest 2026."
+        ]
+      },
+      "mazza": {
+        "title": "DJ Mazza Press Kit",
+        "period": "2026",
+        "org": "Freelance",
+        "role": "Diseño y desarrollo",
+        "description": "Press kit de una sola página en React 19 con un logo 3D en Three.js, vectorizado a partir del PNG del cliente con Python y OpenCV, con 0.997 de IoU en la silueta.",
+        "details": [
+          "React 19, TypeScript, Tailwind 4, Motion y Lenis.",
+          "Logo 3D en Three.js vectorizado desde el PNG del cliente con Python/OpenCV (0.997 de IoU en la silueta).",
+          "El prerenderizado estático entrega HTML completo sin JavaScript para un primer pintado rápido.",
+          "Reproductores de SoundCloud y YouTube con carga diferida, alimentados por RSS en tiempo de build.",
+          "Alternativas para cuando falla WebGL o se prefiere menos movimiento, y 11 pruebas de humo automatizadas con Playwright."
+        ]
+      },
+      "hunter": {
+        "title": "Hunter BarberShop",
+        "period": "2026",
+        "org": "Freelance",
+        "role": "Diseño y desarrollo",
+        "description": "Sitio de una sola página para una barbería local. Servicios, reseñas, galería, WhatsApp, redes y mapa viven en una sola capa de datos, así el cliente actualiza el contenido sin tocar componentes.",
+        "details": [
+          "React 19, TypeScript y Tailwind 4.",
+          "Servicios, reseñas, galería, WhatsApp, redes y mapa configurados desde una sola capa de datos.",
+          "El cliente puede actualizar el contenido sin tocar componentes.",
+          "Desplegado en Netlify."
+        ]
+      },
+      "agent": {
+        "title": "AI Browser Agent",
+        "period": "abr 2026",
+        "org": "Infosys InStep",
+        "role": "Software & AI Intern",
+        "description": "Sistema de RAG agéntico que rastrea cualquier URL con Chromium headless, la indexa en FAISS y responde con LLaMA 3.3 70B, explorando subpáginas cuando baja la confianza de la recuperación.",
+        "details": [
+          "Rastrea cualquier URL con Chromium headless/Playwright y genera embeddings con all-MiniLM-L6-v2 en un vector store FAISS.",
+          "Responde con LLaMA 3.3 70B alojado en Groq, servido con un backend en FastAPI y un frontend en Gradio.",
+          "Ciclo agéntico de varias iteraciones que ordena enlaces por similitud coseno y extrae subpáginas relevantes cuando la confianza de la recuperación cae bajo un umbral.",
+          "Tool-calling manual en JSON para sortear las limitaciones de parsing de Groq, más deduplicación de chunks entre iteraciones."
+        ]
+      },
+      "petsride": {
+        "title": "Pets-Ride",
+        "period": "dic 2025",
+        "org": "Proyecto académico · UADY",
+        "role": "Desarrollo full-stack",
+        "description": "Plataforma full-stack de servicios para mascotas: una REST API segura en Node.js/Express con JWT y control de acceso por roles sobre un esquema normalizado en PostgreSQL, y un frontend en React basado en componentes.",
+        "details": [
+          "REST API segura en Node.js/Express con autenticación JWT sin estado y control de acceso por roles.",
+          "Esquema normalizado en PostgreSQL que mantiene la integridad transaccional de las reservas.",
+          "Frontend en React/Vite basado en componentes, con Tailwind CSS y Material-UI.",
+          "Comunicación con la API centralizada en interceptores de Axios para un manejo consistente de errores y tokens."
+        ]
+      },
+      "katas": {
+        "title": "DJ Katas Press Kit",
+        "period": "2026",
+        "org": "Freelance",
+        "role": "Diseño y desarrollo",
+        "description": "Press kit ligero en HTML, CSS y JavaScript puro, con verificación en Google Search Console para que sea fácil de encontrar.",
+        "details": [
+          "HTML, CSS y JavaScript puro, sin framework.",
+          "Verificación en Google Search Console para mejorar su visibilidad en búsquedas."
+        ]
+      }
+    },
+    "illustration": "Ilustración"
+  },
+  "project": {
+    "back": "Volver a proyectos",
+    "overview": "Resumen",
+    "highlights": "Lo que construí",
+    "stack": "Stack",
+    "role": "Rol",
+    "period": "Periodo",
+    "client": "Contexto",
+    "repo": "Repositorio",
+    "more": "Más proyectos",
+    "stub": "Pronto habrá una versión más completa con capturas."
+  },
+  "experience": {
+    "eyebrow": "// Stack y experiencia",
+    "title": "En qué soy bueno y dónde lo aprendí",
+    "contrib": {
+      "handle": "@AndyTue",
+      "summary": "{count, plural, one {# contribución} other {# contribuciones}} en el último año",
+      "mock": "Datos de ejemplo. Los reales se cargan al compilar.",
+      "day": "{count, plural, =0 {Sin contribuciones} one {# contribución} other {# contribuciones}} el {date}",
+      "label": "Gráfica de contribuciones en GitHub del último año",
+      "less": "Menos",
+      "more": "Más"
+    },
+    "marqueeLabel": "Tecnologías con las que trabajo",
+    "stackTitle": "Herramientas",
+    "groups": {
+      "languages": "Lenguajes",
+      "backend": "Backend y bases de datos",
+      "frontend": "Frontend",
+      "ai": "IA y ML",
+      "tools": "Automatización, sistemas y control de versiones"
+    },
+    "timelineLabel": "Experiencia y educación",
+    "items": {
+      "freelance": {
+        "org": "Freelance · Remoto",
+        "role": "Desarrollador Web Freelance",
+        "dates": "jul 2026",
+        "highlight": "Tres sitios en producción para tres clientes.",
+        "description": "Entrego sitios web a la medida de punta a punta (requerimientos, diseño, desarrollo y despliegue) para dos press kits de DJs y una barbería, y llevo toda la relación con el cliente: alcance, recopilación de contenido, entrega y traspaso."
+      },
+      "infosys": {
+        "org": "Infosys InStep · Bengaluru, India",
+        "role": "Software & AI Intern",
+        "dates": "feb 2026 – ago 2026",
+        "highlight": "Mención honorífica, Best Real-World Application, ProjectFest 2026.",
+        "description": "Diseñé e implementé AI-Powered eKYC & Risk Intelligence on MOSIP con un pipeline de detección de fraude en varias etapas, y construí un AI Browser Agent que aplica RAG agéntico a contenido web. Trabajé en un entorno de ingeniería internacional y presenté los resultados en el ProjectFest anual de la empresa."
+      },
+      "mcgill": {
+        "org": "McGill University · Montréal, Canadá",
+        "role": "Inglés Inmersivo para STEM",
+        "dates": "jul 2025 – ago 2025",
+        "highlight": "Seleccionado entre los 100 mejores universitarios de Yucatán para una beca SECIHTI con todos los gastos cubiertos.",
+        "description": "Programa internacional STEM enfocado en comunicación técnica avanzada en contextos de ingeniería, con sesiones de inmersión industrial en Google Montréal y Future Electronics, colaborando directamente con ingenieros en diseño de sistemas reales, desarrollo de productos y prácticas de innovación.",
+        "tags": [
+          "Comunicación técnica",
+          "Inglés para ingeniería",
+          "Inmersión industrial"
+        ]
+      },
+      "upb": {
+        "org": "Universidad Pontificia Bolivariana · Bucaramanga, Colombia",
+        "role": "Ingeniería de Sistemas y Computación",
+        "dates": "jul 2024 – nov 2024",
+        "highlight": "Un semestre académico completo en el extranjero en Ingeniería de Sistemas y Computación.",
+        "description": "Cursé materias clave de desarrollo móvil, diseño UX/UI, gestión de proyectos y sistemas distribuidos en la UPB.",
+        "tags": [
+          "Desarrollo móvil",
+          "Diseño UX/UI",
+          "Gestión de proyectos",
+          "Sistemas distribuidos"
+        ]
+      },
+      "unm": {
+        "org": "The University of New Mexico · Albuquerque, EE. UU.",
+        "role": "El Instituto de Identidad y Liderazgo Comunitario",
+        "dates": "jun 2024 – jul 2024",
+        "highlight": "1 de 14 estudiantes seleccionados en todo el país para la beca de liderazgo de la Embajada de EE. UU. en México.",
+        "description": "80 horas de capacitación intensiva en liderazgo comunitario, planeación estratégica y colaboración intercultural en The Institute on Identity and Community Leadership.",
+        "tags": [
+          "Liderazgo comunitario",
+          "Planeación estratégica",
+          "Colaboración intercultural"
+        ]
+      },
+      "council": {
+        "org": "Facultad de Matemáticas, UADY",
+        "role": "Consejero Alumno",
+        "roleNote": "",
+        "dates": "feb 2023 – ene 2025",
+        "highlight": "Elegido por mis compañeros para representar a más de 1,400 estudiantes.",
+        "description": "Formé parte de los consejos de gobierno académico de la facultad como enlace entre estudiantes y administración, y apoyé iniciativas de mejora institucional.",
+        "tags": [
+          "Representación",
+          "Gobierno académico",
+          "Vocería estudiantil"
+        ]
+      },
+      "uady": {
+        "org": "Universidad Autónoma de Yucatán (UADY)",
+        "role": "Licenciatura en Ingeniería de Software",
+        "dates": "ago 2021 – jun 2026",
+        "highlight": "Promedio 88/100 · Titulación en proceso.",
+        "description": "Licenciatura en ingeniería de software con base en algoritmos y estructuras de datos, bases de datos, sistemas distribuidos y en la nube, e inteligencia artificial.",
+        "courses": [
+          "Algoritmos y estructuras de datos",
+          "Matemáticas para la computación",
+          "Programación avanzada",
+          "Fundamentos de ingeniería de software",
+          "Sistemas de bases de datos",
+          "Desarrollo móvil y web",
+          "Sistemas distribuidos y en la nube",
+          "Inteligencia artificial"
+        ]
+      }
+    }
+  },
+  "services": {
+    "eyebrow": "// Servicios",
+    "title": "Puedo ayudarte con esto",
+    "items": {
+      "web": {
+        "title": "Sitios web y press kits a la medida",
+        "category": "Web",
+        "description": "Sitios de una sola página diseñados y construidos de punta a punta, desplegados en Netlify o Vercel. El contenido vive en una sola capa de datos y se cambia sin tocar componentes."
+      },
+      "fullstack": {
+        "title": "Aplicaciones web full-stack",
+        "category": "Full-stack",
+        "description": "REST APIs seguras con JWT y control de acceso por roles sobre PostgreSQL, junto con frontends en React basados en componentes."
+      },
+      "ai": {
+        "title": "IA aplicada y sistemas RAG",
+        "category": "IA aplicada",
+        "description": "RAG agéntico sobre contenido web o documentos: rastreo, embeddings, búsqueda vectorial y respuestas con LLM servidas desde una API limpia."
+      },
+      "vision": {
+        "title": "Visión por computadora e inteligencia documental",
+        "category": "Visión por computadora",
+        "description": "Pipelines de verificación de documentos y detección de fraude: OCR, detección de alteraciones y extracción de campos estructurados."
+      },
+      "delivery": {
+        "title": "Entregas confiables y mantenibles",
+        "category": "Entrega",
+        "description": "Pruebas de humo automatizadas, documentación clara y un traspaso limpio, para que el equipo que recibe el código siga avanzando."
+      }
+    }
+  },
+  "recognition": {
+    "eyebrow": "// Reconocimientos",
+    "title": "Premios y certificaciones",
+    "prev": "Reconocimiento anterior",
+    "next": "Reconocimiento siguiente",
+    "slide": "{current} de {total}",
+    "items": {
+      "projectfest": {
+        "statement": "Mención honorífica a Best Real-World Application por AI-Powered eKYC & Risk Intelligence on MOSIP.",
+        "org": "Infosys InStep · Annual ProjectFest",
+        "meta": "Premio · 2026"
+      },
+      "embassy": {
+        "statement": "Uno de 14 estudiantes seleccionados en todo el país para El Instituto de Identidad y Liderazgo Comunitario.",
+        "org": "Programa de 80 horas de formación en liderazgo comunitario, planeación estratégica y colaboración intercultural · University of New Mexico",
+        "meta": "Embajada de EE. UU. en México · 2024"
+      },
+      "ctf": {
+        "statement": "Tercer lugar en una competencia de ataque y defensa en vivo: explotar sistemas objetivo mientras blindábamos nuestra propia infraestructura ante adversarios activos.",
+        "org": "Capture the Flag Yucatán i6",
+        "meta": "Competencia · 2024"
+      },
+      "secihti": {
+        "statement": "Beca con todos los gastos cubiertos para Immersive English for STEM en McGill, otorgada a los 100 mejores universitarios del estado.",
+        "org": "Beca Internacional SECIHTI Yucatán · McGill University",
+        "meta": "Beca · 2025"
+      },
+      "google": {
+        "statement": "Certificado profesional en gestión de proyectos, con enfoque en Agile y Scrum.",
+        "org": "Google Project Management Professional Certificate · Coursera",
+        "meta": "Certificado · marzo 2025"
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "// Cómo trabajo",
+    "title": "De punta a punta, de la primera pregunta al producto en producción",
+    "profile": {
+      "name": "Andrés Turriza",
+      "location": "Tizimín, MX",
+      "badge": "Perfil verificado",
+      "stats": {
+        "gpa": "Promedio",
+        "clients": "Clientes",
+        "students": "Estudiantes representados"
+      }
+    },
+    "relocate": {
+      "badge": "Disponible",
+      "title": "Listo para reubicarme",
+      "text": "Vivo en Tizimín, Yucatán. Puedo trabajar en remoto o mudarme por el puesto indicado."
+    },
+    "card": {
+      "title": "Trabaja conmigo",
+      "lead": "Acepto proyectos freelance y estoy abierto a oportunidades de tiempo completo.",
+      "sub": "Un ingeniero de los requerimientos a producción, con disponibilidad para reubicarme.",
+      "badge": "Freelance y tiempo completo",
+      "points": [
+        "Entrega de punta a punta: requerimientos, diseño, desarrollo y despliegue",
+        "Contenido editable desde una sola capa de datos",
+        "Bilingüe ES/EN, inglés profesional",
+        "Alcance, recopilación de contenido, entrega y traspaso",
+        "Disponible para reubicarme"
+      ],
+      "headline": "Del brief a producción."
+    }
+  },
+  "contact": {
+    "eyebrow": "// Hablemos",
+    "title": "Cuéntame qué estás construyendo",
+    "photoAlt": "Andrés Turriza",
+    "tag": "Disponible",
+    "name": "Andrés Turriza",
+    "role": "Ingeniero de Software",
+    "stepOf": "Paso {current} de {total}",
+    "back": "Atrás",
+    "next": "Continuar",
+    "steps": {
+      "need": "¿Qué necesitas?",
+      "details": "Tus datos",
+      "review": "Listo para enviar"
+    },
+    "options": {
+      "website": {
+        "title": "Sitio web o press kit a la medida",
+        "description": "Un sitio de una sola página, rápido y editable, diseñado y construido de punta a punta."
+      },
+      "project": {
+        "title": "Proyecto full-stack o de IA",
+        "description": "APIs, aplicaciones web, sistemas RAG o pipelines de visión por computadora."
+      },
+      "fulltime": {
+        "title": "Oportunidad de tiempo completo / reubicación",
+        "description": "Un puesto en tu equipo, presencial o remoto. Estoy disponible para reubicarme."
+      }
+    },
+    "fields": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo",
+      "emailPlaceholder": "tu@empresa.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Unas líneas sobre el proyecto o el puesto"
+    },
+    "errors": {
+      "name": "Escribe tu nombre para saber quién me contacta.",
+      "email": "Ese correo no parece válido. Revísalo e inténtalo de nuevo.",
+      "message": "Agrega un mensaje breve, de al menos 10 caracteres."
+    },
+    "review": {
+      "intro": "Esto abre tu app de correo con todo ya escrito. Puedes editarlo antes de enviar.",
+      "need": "Necesidad",
+      "from": "De",
+      "message": "Mensaje"
+    },
+    "send": "Abrir correo para enviar",
+    "sent": "Tu app de correo ya debería estar abierta. Si no, escríbeme a <link>{email}</link>.",
+    "restart": "Empezar de nuevo",
+    "mail": {
+      "subject": "Contacto desde el portafolio: {need}",
+      "body": "Hola, Andrés:\n\n{message}\n\n{name}\n{email}"
+    }
+  },
+  "footer": {
+    "thanks": "Gracias por la visita",
+    "build": "Construyamos algo útil",
+    "signature": "Andrés",
+    "fullName": "Andrés de Jesús Turriza Euan",
+    "role": "Ingeniero de Software",
+    "time": "Hora local",
+    "weatherIn": "Tizimín, Yucatán",
+    "weatherUnavailable": "Clima no disponible",
+    "copyright": "© Andrés de Jesús Turriza Euan {year}",
+    "social": "Encuéntrame en",
+    "backToTop": "Volver arriba"
+  },
+  "weather": {
+    "clear": "Despejado",
+    "mostlyClear": "Mayormente despejado",
+    "partlyCloudy": "Parcialmente nublado",
+    "overcast": "Nublado",
+    "fog": "Niebla",
+    "drizzle": "Llovizna",
+    "rain": "Lluvia",
+    "showers": "Chubascos",
+    "storm": "Tormenta eléctrica",
+    "snow": "Nieve"
+  },
+  "notFound": {
+    "title": "Esta página se perdió",
+    "back": "Ir al inicio"
+  }
+}
