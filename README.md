@@ -1,6 +1,6 @@
 # Portfolio · Andrés Turriza
 
-Portfolio personal bilingüe (ES/EN) de una sola página, con el diseño, el layout y las micro-interacciones de la plantilla de referencia [Zolt](https://zolt-portfolio.framer.website/), pero con contenido, fotos y marca propios.
+Portfolio personal bilingüe (ES/EN) de una sola página.
 
 **Stack:** Next.js 15 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · `motion` · `next-intl` · Playwright.
 
